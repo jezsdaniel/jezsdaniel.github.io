@@ -504,6 +504,16 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.19.3.tgz#e5036be529f757e58d9a7771f2f1b14782986a74"
   integrity sha512-FbUN+0ZRXsypPyWE2IwIkVjDkDnJoMJARWOcFZn4KPPli+QnKqF0z1anvfaYe3ev5HFCpRDLLBDHyOALLppWHw==
 
+"@fontsource-variable/inter@^5.0.8":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/inter/-/inter-5.0.8.tgz#bd6d61ece1019c59b0ac330a138d48a34dfa6d8c"
+  integrity sha512-WkYfFNccmEIeL2fNg0mYeLWqOoB7xD8MFxFRc4IwbSP2o8ZaBt36v5aW4by4MyrgGRMNk7uNi5LbvYKq6clPjw==
+
+"@fontsource-variable/rubik@^5.0.14":
+  version "5.0.14"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/rubik/-/rubik-5.0.14.tgz#b29c83ec6a9db3964f5cf7103c95db5ca4b3c6a2"
+  integrity sha512-dcv32sSvAdML0NPdRl6KowEC05onAmQPwkuS1SdRF67i4VcWnvShGbyZuSPF/17+FzIY9HJKFQbxAHIL6CtJlg==
+
 "@jridgewell/gen-mapping@^0.3.0", "@jridgewell/gen-mapping@^0.3.2":
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/@jridgewell/gen-mapping/-/gen-mapping-0.3.3.tgz#7e02e6eb5df901aaedb08514203b096614024098"
@@ -556,6 +566,16 @@
   dependencies:
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
+
+"@popperjs/core@^2.11.2":
+  version "2.11.8"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.8.tgz#6b79032e760a0899cd4204710beede972a3a185f"
+  integrity sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==
+
+"@preline/scrollspy@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@preline/scrollspy/-/scrollspy-1.3.0.tgz#b14441d0be23bdebd6c6ce013f4020370d61ac33"
+  integrity sha512-+aCaREv8B1pZ7xe+JCqG76TVDSryB1OfiwfL0OcdyD9l0uYkNiaTvIzd5xpHY06nG3esE4YV/b58UN6JmStoiw==
 
 "@types/babel__core@^7.20.1":
   version "7.20.2"
@@ -2643,6 +2663,13 @@ preferred-pm@^3.1.2:
     find-yarn-workspace-root2 "1.2.16"
     path-exists "^4.0.0"
     which-pm "2.0.0"
+
+preline@^1.9.0:
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/preline/-/preline-1.9.0.tgz#b872c9e0d472242cb6f019c329f1edaa0511596e"
+  integrity sha512-zvOexsDBood9gBAQYSwz7iY8TaomtRD0/qxvCnJl3caq5pif6frl8Oe4b4DsxHHD3Clzl4I5RmVKTq9XjMvNJA==
+  dependencies:
+    "@popperjs/core" "^2.11.2"
 
 prismjs@^1.29.0:
   version "1.29.0"
