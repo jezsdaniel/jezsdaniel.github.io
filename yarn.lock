@@ -504,6 +504,16 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.19.3.tgz#e5036be529f757e58d9a7771f2f1b14782986a74"
   integrity sha512-FbUN+0ZRXsypPyWE2IwIkVjDkDnJoMJARWOcFZn4KPPli+QnKqF0z1anvfaYe3ev5HFCpRDLLBDHyOALLppWHw==
 
+"@fontsource-variable/inter@^5.0.8":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/inter/-/inter-5.0.8.tgz#bd6d61ece1019c59b0ac330a138d48a34dfa6d8c"
+  integrity sha512-WkYfFNccmEIeL2fNg0mYeLWqOoB7xD8MFxFRc4IwbSP2o8ZaBt36v5aW4by4MyrgGRMNk7uNi5LbvYKq6clPjw==
+
+"@fontsource-variable/rubik@^5.0.14":
+  version "5.0.14"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/rubik/-/rubik-5.0.14.tgz#b29c83ec6a9db3964f5cf7103c95db5ca4b3c6a2"
+  integrity sha512-dcv32sSvAdML0NPdRl6KowEC05onAmQPwkuS1SdRF67i4VcWnvShGbyZuSPF/17+FzIY9HJKFQbxAHIL6CtJlg==
+
 "@jridgewell/gen-mapping@^0.3.0", "@jridgewell/gen-mapping@^0.3.2":
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/@jridgewell/gen-mapping/-/gen-mapping-0.3.3.tgz#7e02e6eb5df901aaedb08514203b096614024098"
