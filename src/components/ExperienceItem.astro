@@ -14,7 +14,7 @@ const { from, to, position, organization, organizationUrl, description, skills }
   Astro.props;
 ---
 
-<li class="mb-12">
+<li class="mb-12 fade-in">
   <a
     href={organizationUrl}
     target="_blank"
@@ -26,11 +26,18 @@ const { from, to, position, organization, organizationUrl, description, skills }
     <div
       class="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"
     >
-    </div><header
-      class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2"
-      aria-label="2018 to Present"
+    </div>
+    <span
+      class="absolute -left-4 top-4 bottom-4 w-px bg-gradient-to-b from-transparent via-light-green to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden lg:block"
+    ></span>
+    <header
+      class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2 flex items-start gap-2"
+      aria-label={`${from} to ${to}`}
     >
-      {from} — {to}
+      <span
+        class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full border border-slate-600 bg-dark-green group-hover:border-light-green group-hover:bg-light-green/20 transition-all duration-300 hidden sm:block"
+      ></span>
+      <span>{from} — {to}</span>
     </header><div class="z-10 sm:col-span-6">
       <h3 class="font-medium leading-snug text-slate-200">
         <div
@@ -48,9 +55,7 @@ const { from, to, position, organization, organizationUrl, description, skills }
           {
             skills.map((skill) => (
               <li class="mr-1.5 mt-2">
-                <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-light-green">
-                  {skill}
-                </div>
+                <div class="skill-tag">{skill}</div>
               </li>
             ))
           }

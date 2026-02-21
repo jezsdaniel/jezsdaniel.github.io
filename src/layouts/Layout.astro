@@ -22,26 +22,110 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <div id="spotlight" aria-hidden="true"></div>
+    <div class="noise-overlay" aria-hidden="true"></div>
     <slot />
   </body>
 </html>
+
 <style is:global>
   :root {
     --accent: 136, 58, 234;
     --accent-light: 224, 204, 250;
     --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
   }
+
   html {
     font-family: system-ui, sans-serif;
     background: #061b0b;
     color: #ffffff;
   }
+
+  /* ── Cursor spotlight ─────────────────────────────────── */
+  #spotlight {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    pointer-events: none;
+  }
+
+  /* ── Noise texture overlay ────────────────────────────── */
+  .noise-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    pointer-events: none;
+    opacity: 0.04;
+    background-image: url('/noise.svg');
+    background-size: 300px 300px;
+  }
+
+  /* ── Animated gradient name ───────────────────────────── */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  .gradient-name {
+    background: linear-gradient(90deg, #00ffc2 0%, #ffffff 50%, #00ffc2 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 5s ease infinite;
+  }
+
+  /* ── Gradient-border skill tags ───────────────────────── */
+  .skill-tag {
+    background:
+      linear-gradient(rgba(6, 27, 11, 0.85), rgba(6, 27, 11, 0.85)) padding-box,
+      linear-gradient(135deg, #00ffc2, #4e8098) border-box;
+    border: 1px solid transparent;
+    border-radius: 9999px;
+    color: #00ffc2;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    padding: 0.25rem 0.75rem;
+    display: flex;
+    align-items: center;
+  }
+
+  /* ── Scroll fade-in ───────────────────────────────────── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 </style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Cursor spotlight
+    const spotlight = document.getElementById('spotlight');
+    document.addEventListener('mousemove', (e) => {
+      spotlight.style.background = `radial-gradient(600px circle at ${e.clientX}px ${e.clientY}px, rgba(0, 255, 194, 0.06), transparent 80%)`;
+    });
+
+    // Scroll fade-in
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+  });
+</script>
 
 <script is:inline src="../../node_modules/@preline/scrollspy/index.js"></script>
